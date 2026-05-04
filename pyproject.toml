@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "aligner"
+name = "lco-aligner"
 version = "0.0.1"
 description = "A small package for aligning LCO images for AstroImageJ photometry"
 license = "MIT"
@@ -7,11 +7,11 @@ license-files = ["LICENSE"]
 authors = ["Meir E. Schochet <meir@msu.edu>"]
 readme = "README.md"
 repository = "https://github.com/m-schochet/aligner"
-include = ["MANIFEST.in"]
-
+include = ["MANIFEST.in", "lco_aligner/src/aligner/wcs_headers.json"]
+packages = [{ include = "aligner", from = "lco_aligner/src" }]
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = "^3.11"
 astropy = ">=5.0"
 pytz = ">=2026.0"
 twirl = ">=0.4.0"
