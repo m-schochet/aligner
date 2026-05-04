@@ -1,21 +1,27 @@
-[build-system]
-requires = ["setuptools >= 61.0"]
-build-backend = "setuptools.build_meta"
-
-[project]
+[tool.poetry]
 name = "aligner"
-dynamic = ["version"]
+version = "0.0.1"
+description = "A small package for aligning LCO images for AstroImageJ photometry"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = ["Meir E. Schochet <meir@msu.edu>"]
+readme = "README.md"
+repository = "https://github.com/m-schochet/aligner"
+include = ["MANIFEST.in"]
 
-dependencies = [
-"numpy",
-"glob",
-"astropy",
-"twirl",
-"pytz",
+
+[tool.poetry.dependencies]
+python = "^3.12"
+astropy = ">=5.0"
+pytz = ">=2026.0"
+twirl = ">=0.4.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+testpaths = [
+    "tests",
+    "src",
 ]
-
-[tool.setuptools.dynamic]
-version = {attr = "aligner.__version__"}
-
-[tool.setuptools.packages]
-find = {}

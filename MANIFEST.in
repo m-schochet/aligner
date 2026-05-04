@@ -1,1 +1,1 @@
-include sinistro_align/wcs_headers.json
+include aligner/src/aligner/wcs_headers.json
